@@ -14,7 +14,7 @@ body {
     width: 1000px;
     padding: 20px;
     border: 5px solid aqua;
-    font-size: 10px;
+    font-size: 12px;
     background-color: rgb(34, 49, 58);
     color: azure;
     display: flex;
@@ -37,16 +37,36 @@ margin-right: 30px;
     background-color: rgb(177, 196, 208);
     display: flex;
     align-items: center;
+    justify-content: center;
     border: 5px solid aqua;
     margin: 0;
+    flex-direction: column;
+    text-align: center;
 }
 
-.quiz {
-    
+.button_conteiner {
+    align-items: center;
 }
 
-.start_button {
+.button {
+    background-color: #f44336;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+  }
+
+  .button:hover {
+    background-color: #4CAF50;
+  }
+
+/* .start_button {
     cursor: pointer;
     background-color: rgb(16, 77, 143);
     color: cornsilk;
-}
+    border-radius: 5%;
+} */
