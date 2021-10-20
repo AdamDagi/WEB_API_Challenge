@@ -1,4 +1,48 @@
 const timer = document.querySelector(".timer");
+const buttonStart = document.querySelector(".button-start");
+const fiveMinutes = 60 * 1;
+const quiz = document.querySelector(".quiz");
+const buttonConteiner = document.querySelector(".button_conteiner-start");
+const quizBoxStarter = document.querySelector(".quiz_box_starter");
+const quizBoxQuestions = document.querySelector(".quiz_box_questions");
+const data = [
+    {
+        question: "Question1",
+        button1: "Answer1",
+        button2: "Answer2",
+        button3: "Answer3",
+        button4: "Answer4",
+        answer: "right answer",
+        order: 1
+    },
+    {
+        question: "Question1",
+        button1: "Answer1",
+        button2: "Answer2",
+        button3: "Answer3",
+        button4: "Answer4",
+        answer: "right answer",
+        order: 2
+    },
+    {
+        question: "Question1",
+        button1: "Answer1",
+        button2: "Answer2",
+        button3: "Answer3",
+        button4: "Answer4",
+        answer: "right answer",
+        order: 3
+    },
+    {
+        question: "Question1",
+        button1: "Answer1",
+        button2: "Answer2",
+        button3: "Answer3",
+        button4: "Answer4",
+        answer: "right answer",
+        order: 4
+    }
+];
 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -15,9 +59,11 @@ function startTimer(duration, display) {
             timer = duration;
         }
     }, 1000);
-}
-
-window.onload = function () {
-    var fiveMinutes = 60 * 1;
-    startTimer(fiveMinutes, timer);
 };
+
+buttonStart.onclick = () => {
+    startTimer(fiveMinutes, timer);
+    quizBoxStarter.style.display = "none";
+    quizBoxQuestions.style.display = "block";
+};
+
