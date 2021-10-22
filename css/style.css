@@ -60,13 +60,31 @@ body {
     transition-duration: 0.4s;
   }
 
-  .button:hover {
+.button:hover {
     background-color: #4CAF50;
-  }
+}
 
-/* .start_button {
-    cursor: pointer;
-    background-color: rgb(16, 77, 143);
-    color: cornsilk;
-    border-radius: 5%;
-} */
+.quiz_box_questions {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.button_answer_conteiner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.buttonanswer {
+    background-color: #f44336;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    margin: 5px;
+}
