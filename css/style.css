@@ -24,6 +24,7 @@ body {
 
 .scores{
     margin-left: 30px;
+    color: rgb(135, 191, 247);
 }
 
 .timer {
@@ -87,4 +88,35 @@ body {
     border-radius: 12px;
     transition-duration: 0.4s;
     margin: 5px;
+}
+
+.submit-button, .back-button, .clear-button {
+    color: cornsilk;
+    background-color: rgb(57, 133, 214);
+    border-radius: 12px;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.table-head {
+    background-color: rgb(187, 117, 11);
+}
+
+.table-body {
+    background-color: rgb(233, 168, 71);
 }

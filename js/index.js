@@ -107,9 +107,19 @@ function correctAnswer(e) {
     if (clickText === currentCard.answer) {
         score++;
         answerStatus.innerHTML = "Correct";
+        answerStatus.style.backgroundColor = "cadetblue";
+        answerStatus.style.borderRadius = "12px";
+        answerStatus.style.padding = "16px";
+        answerStatus.style.marginTop = "40px";
+        answerStatus.style.width = "100px";
         console.log("correctAnswer", score);
     } else {
         answerStatus.innerHTML = "Wrong";
+        answerStatus.style.backgroundColor = "cadetblue";
+        answerStatus.style.borderRadius = "12px";
+        answerStatus.style.padding = "16px";
+        answerStatus.style.marginTop = "40px";
+        answerStatus.style.width = "100px";
     }
     answerStatus.style.display = "block";
     setTimeout(() => answerStatus.style.display = "none", 2000);

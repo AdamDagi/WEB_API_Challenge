@@ -11,8 +11,8 @@
 
   <body>
       <header class="head-bar">
-          <h1 class="scores">
-              Viev High Scores
+          <h1>
+            <a href="" class="scores">Viev High Scores</a> 
           </h1>
           <div class="timer">
               <h1>Timer</h1>
@@ -41,7 +41,36 @@
                     <button type="button" class="buttonanswer buttonanswer4"></button>
                 </div>
                 <div class="status" style="display: block;">
-                    SDFGHJHGFGHJKHGFVGHJKJHGFF
+                </div>
+                <div class="result">
+                    <h1 class="final-message">All Done</h1>
+                    <h2 class="final-score">Your final score is</h2>
+                    <label for="fname">Enter initials:</label>
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <button class="submit-button">Submit</button>
+                </div>
+                <div class="highscores">
+                    <h1 class="highscores-message">Highscores</h1>
+                    <div class="table-container">
+                        <table class="table-all">
+                          <thead>
+                            <tr class="table-head">
+                              <th>Last Name</th>
+                              <th>Points</th>
+                            </tr>
+                          </thead>
+                          <tr class="table-body">
+                            <td>Smith</td>
+                            <td>50</td>
+                          </tr>
+                          <tr class="table-body">
+                            <td>Jackson</td>
+                            <td>94</td>
+                          </tr>
+                        </table>
+                      </div>
+                    <button class="back-button">Go Back</button>
+                    <button class="clear-button">Clear Highscores</button>
                 </div>
             </div>
       </main>
