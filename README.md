@@ -12,3 +12,4 @@
 * Created function in js to add all new users who took quiz to the score table.
 * Commited all changes and pushed to gitHub.
 * Filed Readme file.
+
