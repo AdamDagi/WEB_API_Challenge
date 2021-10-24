@@ -25,6 +25,13 @@ body {
 .scores{
     margin-left: 30px;
     color: rgb(135, 191, 247);
+    cursor: pointer;
+}
+
+.scores:hover{
+    margin-left: 30px;
+    color: rgb(81, 160, 238);
+    cursor: pointer;
 }
 
 .timer {

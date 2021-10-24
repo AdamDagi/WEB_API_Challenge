@@ -11,9 +11,20 @@ const buttonanswer2 = document.querySelector(".buttonanswer2");
 const buttonanswer3 = document.querySelector(".buttonanswer3");
 const buttonanswer4 = document.querySelector(".buttonanswer4");
 const answerStatus = document.querySelector(".status");
+const finishPage = document.querySelector(".result");
+const highScores = document.querySelector(".highscores");
+const finalScore = document.querySelector(".result-score");
+const inputInfo = document.querySelector(".input-info");
+const submitButton = document.querySelector(".submit-button");
+const backButton = document.querySelector(".back-button");
+const clearButton = document.querySelector(".clear-button");
+const tableContainer = document.querySelector(".table-body");
+const viewHighScores = document.querySelector(".scores");
 var currentOrder = 0;
 var currentCard;
 var score = 0;
+var timerId;
+
 buttonanswer1.onclick = (e) => correctAnswer(e);
 buttonanswer2.onclick = (e) => correctAnswer(e);
 buttonanswer3.onclick = (e) => correctAnswer(e);
@@ -68,7 +79,8 @@ const data = [
 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
-    setInterval(function () {
+    
+    timerId = setInterval( () => {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -79,8 +91,19 @@ function startTimer(duration, display) {
         display.style.fontSize = "15px";
         if (--timer < 0) {
             timer = duration;
+            timeFinished();
         }
     }, 1000);
+};
+
+function timeFinished() {
+    clearInterval(timerId);
+    timer.innerHTML = "<h1>Timer</h1>";
+    quizBoxStarter.style.display = "none";
+    quizBoxQuestions.style.display = "none";
+    finishPage.style.display = "block";
+    highScores.style.display = "none";
+    finalScore.innerHTML = score;
 };
 
 buttonStart.onclick = () => {
@@ -112,7 +135,6 @@ function correctAnswer(e) {
         answerStatus.style.padding = "16px";
         answerStatus.style.marginTop = "40px";
         answerStatus.style.width = "100px";
-        console.log("correctAnswer", score);
     } else {
         answerStatus.innerHTML = "Wrong";
         answerStatus.style.backgroundColor = "cadetblue";
@@ -131,7 +153,56 @@ function correctAnswer(e) {
         currentCard = data[currentOrder];
         showQuiz(data, currentOrder);
     } else {
-        console.log(score);
-        console.log("finita");
+        finishPage.style.display = "block";
+        quizBoxStarter.style.display = "none";
+        highScores.style.display = "none";
+        quizBoxQuestions.style.display = "none";
+        currentOrder = 0;
+        currentCard = data[currentCard];
+        finalScore.innerHTML = score;
+        clearInterval(timerId);
+        timer.innerHTML = "<h1>Timer</h1>";
     }
 };
+
+submitButton.onclick = () => {
+    const value = inputInfo.value;
+    const newLine = document.createElement("tr");
+    const newName = document.createElement("td");
+    const newScore = document.createElement("td"); 
+    
+    newName.innerHTML = value;
+    newScore.innerHTML = score;
+
+    newLine.classList.add("table-body");
+    newLine.append(newName);
+    newLine.append(newScore);
+    tableContainer.append(newLine);
+
+    console.log(value);
+    score = 0;
+
+    quizBoxStarter.style.display = "none";
+    quizBoxQuestions.style.display = "none";
+    finishPage.style.display = "none";
+    highScores.style.display = "block";
+
+};
+
+backButton.onclick = () => {
+    quizBoxStarter.style.display = "block";
+    quizBoxQuestions.style.display = "none";
+    finishPage.style.display = "none";
+    highScores.style.display = "none";
+};
+
+clearButton.onclick = () => {
+    tableContainer.innerHTML = ""
+};
+
+viewHighScores.onclick = () => {
+    quizBoxStarter.style.display = "none";
+    quizBoxQuestions.style.display = "none";
+    finishPage.style.display = "none";
+    highScores.style.display = "block";
+}
