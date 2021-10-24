@@ -13,3 +13,4 @@
 * Commited all changes and pushed to gitHub.
 * Filed Readme file.
 
+<img width="1053" alt="Screen Shot 2021-10-24 at 5 50 58 PM" src="https://user-images.githubusercontent.com/90221273/138614720-b66ccd7e-b00f-4e2e-8ca9-fd0d9020d60c.png">
