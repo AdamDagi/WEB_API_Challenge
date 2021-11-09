@@ -13,8 +13,8 @@
 * Commited all changes and pushed to gitHub.
 * Filed Readme file.
 
-* GitHub Repo: https://github.com/AdamDagi/WEB_API_Challenge
-* URL Link: https://adamdagi.github.io/WEB_API_Challenge/
+* [GitHub Repo Link](https://github.com/AdamDagi/WEB_API_Challenge)
+* [URL Link](https://adamdagi.github.io/WEB_API_Challenge/)
 
 
 * Main page
