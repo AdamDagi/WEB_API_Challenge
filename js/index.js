@@ -1,4 +1,4 @@
-const timer = document.querySelector(".timer");
+const timerEl = document.querySelector(".timer");
 const buttonStart = document.querySelector(".button-start");
 const fiveMinutes = 60 * 1;
 const quiz = document.querySelector(".quiz");
@@ -24,6 +24,7 @@ var currentOrder = 0;
 var currentCard;
 var score = 0;
 var timerId;
+var timer;
 
 buttonanswer1.onclick = (e) => correctAnswer(e);
 buttonanswer2.onclick = (e) => correctAnswer(e);
@@ -78,7 +79,9 @@ const data = [
 ];
 
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+    timer = duration;
+    var minutes;
+    var seconds;
     
     timerId = setInterval( () => {
         minutes = parseInt(timer / 60, 10);
@@ -98,7 +101,7 @@ function startTimer(duration, display) {
 
 function timeFinished() {
     clearInterval(timerId);
-    timer.innerHTML = "<h1>Timer</h1>";
+    timerEl.innerHTML = "<h1>Timer</h1>";
     quizBoxStarter.style.display = "none";
     quizBoxQuestions.style.display = "none";
     finishPage.style.display = "block";
@@ -107,7 +110,7 @@ function timeFinished() {
 };
 
 buttonStart.onclick = () => {
-    startTimer(fiveMinutes, timer);
+    startTimer(fiveMinutes, timerEl);
     quizBoxStarter.style.display = "none";
     quizBoxQuestions.style.display = "block";
     currentCard = data[0];
@@ -142,6 +145,7 @@ function correctAnswer(e) {
         answerStatus.style.padding = "16px";
         answerStatus.style.marginTop = "40px";
         answerStatus.style.width = "100px";
+        timer = timer - 12;
     }
     answerStatus.style.display = "block";
     setTimeout(() => answerStatus.style.display = "none", 2000);
@@ -161,7 +165,7 @@ function correctAnswer(e) {
         currentCard = data[currentCard];
         finalScore.innerHTML = score;
         clearInterval(timerId);
-        timer.innerHTML = "<h1>Timer</h1>";
+        timerEl.innerHTML = "<h1>Timer</h1>";
     }
 };
 
