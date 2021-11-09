@@ -13,21 +13,4 @@
 * Commited all changes and pushed to gitHub.
 * Filed Readme file.
 
-* [GitHub Repo Link](https://github.com/AdamDagi/WEB_API_Challenge)
-* [URL Link](https://adamdagi.github.io/WEB_API_Challenge/)
-
-
-* Main page
-<img width="1051" alt="Screen Shot 2021-11-08 at 12 02 56 PM" src="https://user-images.githubusercontent.com/90221273/140786282-a24ef8c8-6aa6-455a-9c6d-f729f4c22b61.png">
-
-
-* Page with questions
-<img width="1050" alt="Screen Shot 2021-11-08 at 12 03 12 PM" src="https://user-images.githubusercontent.com/90221273/140786329-9b0ca529-9529-4a6e-88d2-4838bf604232.png">
-
-
-* Enter Initials page
-<img width="1052" alt="Screen Shot 2021-11-08 at 12 03 37 PM" src="https://user-images.githubusercontent.com/90221273/140786485-18a3563b-7992-4f31-a033-1ac85ce4605c.png">
-
-
-* Score page
-<img width="1051" alt="Screen Shot 2021-11-08 at 12 03 52 PM" src="https://user-images.githubusercontent.com/90221273/140786405-e52abbad-59f3-43d4-b7ea-a51fe51df2b2.png">
+<img width="1053" alt="Screen Shot 2021-10-24 at 5 50 58 PM" src="https://user-images.githubusercontent.com/90221273/138614720-b66ccd7e-b00f-4e2e-8ca9-fd0d9020d60c.png">
