@@ -171,26 +171,43 @@ function correctAnswer(e) {
 
 submitButton.onclick = () => {
     const value = inputInfo.value;
-    const newLine = document.createElement("tr");
-    const newName = document.createElement("td");
-    const newScore = document.createElement("td"); 
-    
-    newName.innerHTML = value;
-    newScore.innerHTML = score;
+    let oldData = JSON.parse(localStorage.getItem("scores")) || [];
+    let object = {};
+    object[value] = score;
 
-    newLine.classList.add("table-body");
-    newLine.append(newName);
-    newLine.append(newScore);
-    tableContainer.append(newLine);
+    if (oldData.length) {
+        oldData.push(object)
+        localStorage.setItem("scores", JSON.stringify(oldData));
+    } else {
+        oldData = [object];
+        localStorage.setItem("scores", JSON.stringify(oldData));
+    }
 
-    console.log(value);
+    const data = oldData;
+
+    if (data) {
+        tableContainer.innerHTML = "";
+        data.forEach(element => {
+            const newLine = document.createElement("tr");
+            const newName = document.createElement("td");
+            const newScore = document.createElement("td"); 
+
+            newName.innerHTML = Object.keys(element)[0];
+            newScore.innerHTML = Object.values(element)[0];
+
+            newLine.classList.add("table-body");
+            newLine.append(newName);
+            newLine.append(newScore);
+            tableContainer.append(newLine);
+        });
+    }
+
     score = 0;
-
+    inputInfo.value = "";
     quizBoxStarter.style.display = "none";
     quizBoxQuestions.style.display = "none";
     finishPage.style.display = "none";
     highScores.style.display = "block";
-
 };
 
 backButton.onclick = () => {
@@ -201,12 +218,32 @@ backButton.onclick = () => {
 };
 
 clearButton.onclick = () => {
-    tableContainer.innerHTML = ""
+    tableContainer.innerHTML = "";
+    localStorage.removeItem("scores");
 };
 
 viewHighScores.onclick = () => {
+    const data = JSON.parse(localStorage.getItem("scores"));
+
+    if (data) {
+        tableContainer.innerHTML = "";
+        data.forEach(element => {
+            const newLine = document.createElement("tr");
+            const newName = document.createElement("td");
+            const newScore = document.createElement("td"); 
+
+            newName.innerHTML = Object.keys(element)[0];
+            newScore.innerHTML = Object.values(element)[0];
+
+            newLine.classList.add("table-body");
+            newLine.append(newName);
+            newLine.append(newScore);
+            tableContainer.append(newLine);
+        });
+    }
     quizBoxStarter.style.display = "none";
     quizBoxQuestions.style.display = "none";
     finishPage.style.display = "none";
     highScores.style.display = "block";
+
 }
